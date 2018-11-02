@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MaterialModule } from './material.module';
 import 'hammerjs'
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,9 @@ import 'hammerjs'
     ManagerModule,
     InventoryModule,
     PosModule,
-    UserModule
+    UserModule,
+    HttpClientModule,
+    ManagerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
