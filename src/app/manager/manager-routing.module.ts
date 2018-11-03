@@ -13,26 +13,26 @@ const routes: Routes = [
       {
         path: 'home',
         component: ManagerHomeComponent,
-        canActivate: [AuthGuard],
-        data: {
-          expectedRole: Role.Manager,
-        },
+        // canActivate: [AuthGuard],
+        // data: {
+        //   expectedRole: Role.Manager,
+        // },
       },
       {
         path: 'users',
         component: UserManagementComponent,
-        canActivate: [AuthGuard],
-        data: {
-          expectedRole: Role.Manager,
-        },
+        // canActivate: [AuthGuard],
+        // data: {
+        //   expectedRole: Role.Manager,
+        // },
       },
       {
         path: 'receipts',
         component: ReceiptLookupComponent,
-        canActivate: [AuthGuard],
-        data: {
-          expectedRole: Role.Manager,
-        },
+        // canActivate: [AuthGuard],
+        // data: {
+        //   expectedRole: Role.Manager,
+        // },
       },
     ],
   },

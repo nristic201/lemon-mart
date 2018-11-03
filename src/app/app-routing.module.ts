@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ManagerHomeComponent } from './manager/manager-home/manager-home.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -12,7 +13,7 @@ const routes: Routes = [
   {
     path: 'manager',
     loadChildren: './manager/manager.module#ManagerModule',
-    //canLoad: [AuthGuard],
+    //canLoad: [Auth],
   },
   { path: 'user', loadChildren: './user/user.module#UserModule' },
   { path: 'pos', loadChildren: './pos/pos.module#PosModule' },
