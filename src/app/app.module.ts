@@ -11,12 +11,15 @@ import 'hammerjs'
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SimpleDialogComponent } from './common/simple-dialog/simple-dialog.component';
+import { UiService } from './common/ui.service';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    SimpleDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

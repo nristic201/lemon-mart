@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from '../auth/auth.service'
 @Component({
   selector: 'app-home',
   template: `
@@ -13,10 +13,15 @@ import { Component, OnInit } from '@angular/core';
   styles: [`div[fxLayout] {margin-top:32px}`]
 })
 export class HomeComponent implements OnInit {
-  displayLogin= true
-  constructor() { }
+  private _displayLogin = true
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService.authStatus.subscribe(data=>{
+      this._displayLogin=!data.isAuth
+    })
   }
-
+  get displayLogin(){
+    return this._displayLogin
+  }
 }

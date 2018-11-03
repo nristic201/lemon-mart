@@ -65,7 +65,7 @@ export class AuthService {
 
     const loginResponse = this.authProvider(email, password).pipe(
       map(value => {
-        this.setToken(value.accessToken)
+        //this.setToken(value.accessToken)
         return decode(value.accessToken) as IAuthStatus
       }),
       catchError(transformError)
@@ -85,23 +85,23 @@ export class AuthService {
   }
 
   logout() {
-    this.clearToken()
+    //this.clearToken()
     this.authStatus.next(defaultAuthStatus)
   }
 
-  private setToken(jwt: string) {
-    this.setItem('jwt', jwt)
-  }
+  // private setToken(jwt: string) {
+  //   this.setItem('jwt', jwt)
+  // }
 
-  private getDecodedToken(): IAuthStatus {
-    return decode(this.getItem('jwt'))
-  }
+  // private getDecodedToken(): IAuthStatus {
+  //   return decode(this.getItem('jwt'))
+  // }
 
-  getToken(): string {
-    return this.getItem('jwt') || ''
-  }
+  // getToken(): string {
+  //   return this.getItem('jwt') || ''
+  // }
 
-  private clearToken() {
-    this.removeItem('jwt')
-  }
+  // private clearToken() {
+  //   this.removeItem('jwt')
+  // }
 }
